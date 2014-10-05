@@ -12,7 +12,8 @@ window.onload = function(){
         console.log("Setting mouseover" + i);
     }
     $("end").onmouseover = endHandler;
-}
+    $("start").onmousedown = startHandler;
+};
 
 var borderCrossing = function(){
     //$("boundary1").addClassName("youlose");
@@ -22,10 +23,19 @@ var borderCrossing = function(){
         bounds[i].addClassName("youlose");
         console.log("add youlose" + i);
     }
-}
+};
 
 var endHandler = function(){
     if(hit === false){
         alert("You Win!");
     }
-}
+};
+
+var startHandler = function(){
+    console.log("Reset hit");
+    hit = false;
+    for(var i=0; i<bounds.length; i++){
+        console.log("reset bounds" + i);
+        bounds[i].removeClassName("youlose");
+    }
+};
