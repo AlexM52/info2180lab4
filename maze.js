@@ -1,3 +1,4 @@
+"user strict";
 var bounds;             //Var declarations
 var hit;
 
