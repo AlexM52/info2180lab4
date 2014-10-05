@@ -22,15 +22,18 @@ var borderCrossing = function(){                                                
     hit = true;
     for(var i=0; i<bounds.length; i++) {
         bounds[i].addClassName("youlose");
+        $("status").update("Click 'S' to reset");
         //console.log("add youlose" + i);                   //DEBUGGING
     }
 };
 
 var endHandler = function(){                                                                        //end handler..
     if(hit === false){
-        alert("You Win!");
+        //alert("You Win!");
+        $("status").update("You Win!");
     } else {
-        alert("Sorry, you lost.");
+        //alert("Sorry, you lost.");
+        $("status").update("Sorry, you lost. Click 'S' to reset.");
     }
 };
 
@@ -41,4 +44,5 @@ var startHandler = function(){                                                  
         //console.log("reset bounds" + i);                  //DEBUGGING
         bounds[i].removeClassName("youlose");
     }
+    $("status").update("Maze reset. Try Again!");
 };
