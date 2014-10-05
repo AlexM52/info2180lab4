@@ -28,6 +28,8 @@ var borderCrossing = function(){
 var endHandler = function(){
     if(hit === false){
         alert("You Win!");
+    } else {
+        alert("Sorry, you lost.");
     }
 };
 
